@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>secret..</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #ffe6f0;
+      text-align: center;
+    }
+    img {
+      width: 250px;
+      margin-bottom: 20px;
+      border-radius: 15px;
+    }
+    .btn-container {
+      display: flex;
+      gap: 20px;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+      background: #ff4d79;
+      color: white;
+      transition: 0.2s;
+    }
+    button:hover {
+      transform: scale(1.1);
+    }
+    #noBtn {
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <img src="https://media.tenor.com/dTkq2FK0nMcAAAAi/heart-love.gif" alt="Cute gif">
+  <h1>Can we go on a date? 💖</h1>
+  <div class="btn-container">
+    <button id="yesBtn">Yes</button>
+    <button id="noBtn">No</button>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+    let noClickCount = 0;
+
+    // Make "No" run away
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.floor(Math.random() * (window.innerWidth - noBtn.offsetWidth - 50));
+      const y = Math.floor(Math.random() * (window.innerHeight - noBtn.offsetHeight - 50));
+      noBtn.style.position = "absolute";
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
+
+    // Count clicks on "No"
+    noBtn.addEventListener("click", () => {
+      noClickCount++;
+      if (noClickCount <= 3) {
+        alert("Just date me 😤💖");
+      }
+    });
+
+    // Click "Yes"
+    yesBtn.addEventListener("click", () => {
+      alert("Yay!! sabi na eh crush mo din ako hehe 😍");
+    });
+  </script>
+</body>
+</html>
